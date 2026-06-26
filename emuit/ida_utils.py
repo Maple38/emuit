@@ -49,7 +49,7 @@ class IdaUcUtils(object):
 
     @classmethod
     def get_uc_arch_mode(cls):
-        proc = cls.get_processor_name()
+        proc = cls.get_processor_name().lower()
         mode = cls.get_uc_bitness()
         if proc == "metapc":
             arch = uc.unicorn_const.UC_ARCH_X86
