@@ -89,7 +89,7 @@ class IdaUcUtils(object):
         elif "68k" in proc:
             arch = uc.unicorn_const.UC_ARCH_M68K
         else:
-            raise ValueError("Unsupported arch")
+            raise ValueError(f"Unsupported arch: '{proc}'")
 
         return arch, mode
 
