@@ -59,6 +59,11 @@ class IdaUcUtils(object):
                 if mode == uc.unicorn_const.UC_MODE_64
                 else uc.unicorn_const.UC_ARCH_ARM
             )
+            mode = (
+                uc.unicorn_const.UC_MODE_ARM | uc.unicorn_const.UC_MODE_BIG_ENDIAN
+                if "armeb" in proc
+                else uc.unicorn_const.UC_MODE_ARM
+            )
         elif "mips" in proc:  # mipsb, mipsl
             mode |= (
                 uc.unicorn_const.UC_MODE_BIG_ENDIAN
