@@ -62,7 +62,7 @@ class IdaUcUtils(object):
         elif "mips" in proc:  # mipsb, mipsl
             mode |= (
                 uc.unicorn_const.UC_MODE_BIG_ENDIAN
-                if "mispb" in proc
+                if "mipsb" in proc
                 else uc.unicorn_const.UC_MODE_LITTLE_ENDIAN
             )
             arch = uc.unicorn_const.UC_ARCH_MIPS
